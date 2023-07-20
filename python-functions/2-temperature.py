@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 def convert_to_celsius(fahrenheit):
-    celsius = (fahrenheit - 32) * 5 / 9
-    return "{:.2f}".format(celsius)
+    return (fahrenheit - 32) * 5 / 9
 
 
 # print(convert_to_celsius(100))
