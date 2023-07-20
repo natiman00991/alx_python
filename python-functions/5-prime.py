@@ -8,7 +8,7 @@ def is_prime(number):
     return True
 
 
-print(is_prime(17))
-print(is_prime(15))
-print(is_prime(-5))
-print(is_prime(0))
+# print(is_prime(17))
+# print(is_prime(15))
+# print(is_prime(-5))
+# print(is_prime(0))
