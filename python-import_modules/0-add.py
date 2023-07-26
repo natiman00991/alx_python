@@ -10,4 +10,4 @@ if __name__ == "__main__":
     result = add(a, b)
 
     # Print the result using string formatting
-    print(f"{a} + {b} = {result}")
+    print("{} + {} = {}".format(a, b, result))
