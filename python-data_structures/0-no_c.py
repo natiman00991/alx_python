@@ -7,8 +7,3 @@ def no_c(my_string):
             new_aa.append(char)
     ss = "".join(new_aa)
     return ss
-
-
-x = "HellcCcccooccoscccss"
-y = no_c(x)
-print(y)
