@@ -11,6 +11,6 @@ def no_c(my_string):
     return ss
 
 
-x = "C is fun!"
-y = no_c(x)
-print(y)
+# x = "C is fun!"
+# y = no_c(x)
+# print(y)
