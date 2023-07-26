@@ -1,16 +1,14 @@
 def no_c(my_string):
     bb = my_string
     aa = list(bb)
-    for i in range(len(aa) - 2):
-        if aa[i] == "c":
-            del aa[i]
-        elif aa[i] == "C":
-            del aa[i]
-
-    ss = "".join(aa)
+    new_aa = []
+    for char in aa:
+        if char not in ["c", "C"]:
+            new_aa.append(char)
+    ss = "".join(new_aa)
     return ss
 
 
-# x = "C is fun!"
-# y = no_c(x)
-# print(y)
+x = "HellcCcccooccoscccss"
+y = no_c(x)
+print(y)
