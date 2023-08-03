@@ -66,9 +66,9 @@ class BaseGeometry:
             ValueError: If the value is less than or equal to 0.
         """
         if not isinstance(value, int):
-            raise TypeError("{} must be an integer".format(name))
+            raise TypeError(f"{name} must be an integer")
         if value <= 0:
-            raise ValueError("{} must be greater than 0".format(name))
+            raise ValueError(f"{name} must be greater than 0")
 
 
 class Rectangle(BaseGeometry):
@@ -100,7 +100,7 @@ class Rectangle(BaseGeometry):
         Returns:
             str: A formatted string representing the Rectangle object in the format [Rectangle] <width>/<height>.
         """
-        return "[Rectangle] {}/{}".format(self.__width, self.__height)
+        return f"[Rectangle] {self.__width}/{self.__height}"
 
     def area(self):
         """
@@ -138,4 +138,4 @@ class Square(Rectangle):
         Returns:
             str: A formatted string representing the Square object in the format [Square] <size>/<size>.
         """
-        return "[Square] {}/{}".format(self.__size, self.__size)
+        return f"[Square] {self.__size}/{self.__size}"
