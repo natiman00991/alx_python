@@ -1,3 +1,26 @@
+"""
+This module defines the Square class.
+
+The Square class represents a square and has a private instance attribute `__size`, which stores the size of the square.
+The class provides instantiation with an optional size argument. If the size is provided, it must be an integer.
+If the size is not provided, the default value is 0.
+
+Attributes:
+    __size (int): The size of the square.
+
+Methods:
+    __init__(self, size=0):
+        Initializes a new Square instance with the given size (default: 0).
+        Raises:
+            TypeError: If the provided size is not an integer.
+            ValueError: If the provided size is less than 0.
+    area(self):
+        Calculates the area of the square.
+        Returns:
+            int: The area of the square.
+"""
+
+
 class Square:
     """
     This class represents a square.
