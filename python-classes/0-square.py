@@ -1,3 +1,12 @@
+"""
+This module defines the Square class.
+
+The size of a square is crucial for a square, many things depend on it (area computation, etc.),
+so you, as class builder, must control the type and value of this attribute.
+One way to have the control is to keep it privately. You will see in next tasks how to get, update and validate the size value.
+"""
+
+
 class Square:
     """
     This class represents a square.
