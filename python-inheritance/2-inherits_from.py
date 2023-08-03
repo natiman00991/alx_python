@@ -7,16 +7,16 @@ Functions:
     inherits_from(obj, a_class):
         Check if the object is an instance of a class that inherited (directly or indirectly) from the specified class.
 
-        Parameters:
-            obj (Any): The object to be checked.
-                Any valid Python object. The function checks whether this object is an instance of the specified class or any of its subclasses.
-            a_class (type): The class or type to check against.
-                A valid Python class or type. The function determines if the given object is an instance of this class or any of its subclasses.
+    Parameters:
+        obj (Any): The object to be checked.
+            Any valid Python object. The function checks whether this object is an instance of the specified class or any of its subclasses.
+        a_class (type): The class or type to check against.
+            A valid Python class or type. The function determines if the given object is an instance of this class or any of its subclasses.
 
-        Returns:
-            bool: True if the object is an instance of a class that inherited from the specified class, otherwise False.
-                - Returns True if `obj` is an instance of `a_class` or any class that inherited from `a_class`.
-                - Returns False if `obj` is not an instance of `a_class` or any class that inherited from `a_class`.
+    Returns:
+        bool: True if the object is an instance of a class that inherited from the specified class, otherwise False.
+            - Returns True if `obj` is an instance of `a_class` or any class that inherited from `a_class`.
+            - Returns False if `obj` is not an instance of `a_class` or any class that inherited from `a_class`.
 
 Usage:
     import inherits_from
