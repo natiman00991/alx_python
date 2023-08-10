@@ -10,6 +10,6 @@ if __name__ == "__main__":
     content_type = type(response.text).__name__
     content = response.text
 
-    print("Body response:")
-    print("\t- type:", content_type)
-    print("\t- content:", content)
+    # print("Body response:")
+    # print("\t- type:", content_type)
+    # print("\t- content:", content)
