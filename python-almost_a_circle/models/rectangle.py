@@ -1,4 +1,113 @@
-# #!/usr/bin/python3
+# # #!/usr/bin/python3
+# """
+# This module contains the Rectangle class.
+# """
+# from models.base import Base
+
+
+# class Rectangle(Base):
+#     """
+#     The Rectangle class that inherits from Base.
+#     """
+
+#     def __init__(self, width, height, x=0, y=0, id=None):
+#         """
+#         Initializes a new instance of the Rectangle class.
+
+#         Args:
+#             width (int): The width of the rectangle.
+#             height (int): The height of the rectangle.
+#             x (int, optional): The x-coordinate. Defaults to 0.
+#             y (int, optional): The y-coordinate. Defaults to 0.
+#             id (int, optional): The id of the rectangle. Defaults to None.
+#         """
+#         super().__init__(id)
+#         self.width = width
+#         self.height = height
+#         self.x = x
+#         self.y = y
+
+#     @property
+#     def width(self):
+#         """Getter for width attribute."""
+#         return self.__width
+
+#     @width.setter
+#     def width(self, value):
+#         """Setter for width attribute."""
+#         if not isinstance(value, int):
+#             raise TypeError("width must be an integer")
+#         if value <= 0:
+#             raise ValueError("width must be > 0")
+#         self.__width = value
+
+#     @property
+#     def height(self):
+#         """Getter for height attribute."""
+#         return self.__height
+
+#     @height.setter
+#     def height(self, value):
+#         """Setter for height attribute."""
+#         if not isinstance(value, int):
+#             raise TypeError("height must be an integer")
+#         if value <= 0:
+#             raise ValueError("height must be > 0")
+#         self.__height = value
+
+#     @property
+#     def x(self):
+#         """Getter for x attribute."""
+#         return self.__x
+
+#     @x.setter
+#     def x(self, value):
+#         """Setter for x attribute."""
+#         if not isinstance(value, int):
+#             raise TypeError("x must be an integer")
+#         if value < 0:
+#             raise ValueError("x must be >= 0")
+#         self.__x = value
+
+#     @property
+#     def y(self):
+#         """Getter for y attribute."""
+#         return self.__y
+
+#     @y.setter
+#     def y(self, value):
+#         """Setter for y attribute."""
+#         if not isinstance(value, int):
+#             raise TypeError("y must be an integer")
+#         if value < 0:
+#             raise ValueError("y must be >= 0")
+#         self.__y = value
+
+
+# if __name__ == "__main__":
+#     try:
+#         Rectangle(10, "2")
+#     except Exception as e:
+#         print("[{}] {}".format(e.__class__.__name__, e))
+
+#     try:
+#         r = Rectangle(10, 2)
+#         r.width = -10
+#     except Exception as e:
+#         print("[{}] {}".format(e.__class__.__name__, e))
+
+#     try:
+#         r = Rectangle(10, 2)
+#         r.x = {}
+#     except Exception as e:
+#         print("[{}] {}".format(e.__class__.__name__, e))
+
+#     try:
+#         Rectangle(10, 2, 3, -1)
+#     except Exception as e:
+#         print("[{}] {}".format(e.__class__.__name__, e))
+
+#!/usr/bin/python3
 """
 This module contains the Rectangle class.
 """
@@ -83,26 +192,17 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         self.__y = value
 
+    def area(self):
+        """Calculates and returns the area of the rectangle."""
+        return self.__width * self.__height
+
 
 # if __name__ == "__main__":
-#     try:
-#         Rectangle(10, "2")
-#     except Exception as e:
-#         print("[{}] {}".format(e.__class__.__name__, e))
+#     r1 = Rectangle(3, 2)
+#     print(r1.area())
 
-#     try:
-#         r = Rectangle(10, 2)
-#         r.width = -10
-#     except Exception as e:
-#         print("[{}] {}".format(e.__class__.__name__, e))
+#     r2 = Rectangle(2, 10)
+#     print(r2.area())
 
-#     try:
-#         r = Rectangle(10, 2)
-#         r.x = {}
-#     except Exception as e:
-#         print("[{}] {}".format(e.__class__.__name__, e))
-
-#     try:
-#         Rectangle(10, 2, 3, -1)
-#     except Exception as e:
-#         print("[{}] {}".format(e.__class__.__name__, e))
+#     r3 = Rectangle(8, 7, 0, 0, 12)
+#     print(r3.area())
