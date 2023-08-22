@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Module Docstring: This script lists all states with a name starting with N (upper N) from the database hbtn_0e_0_usa.
+Module Docstring: This script lists all states with a name starting with N (case-insensitive) from the database hbtn_0e_0_usa.
 """
 
 import sys
@@ -24,8 +24,10 @@ if __name__ == "__main__":
         )
         cursor = db.cursor()
 
-        # Execute the SQL query
-        cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+        # Execute the SQL query (using LOWER() function for case-insensitive matching)
+        cursor.execute(
+            "SELECT * FROM states WHERE LOWER(name) LIKE 'n%' ORDER BY id ASC"
+        )
 
         # Fetch all rows and display the results
         for row in cursor.fetchall():
