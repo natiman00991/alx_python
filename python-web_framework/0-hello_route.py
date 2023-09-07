@@ -1,4 +1,6 @@
-"""dmdsfjfjdsf;ksjdf;ksdjf;sdkfjksdfjkdfjdlfjdkfjdfkd;sjf;fjks;dlfksd;lfksdfk;sdlfk;sdlk"""
+#!/usr/bin/python3
+"""This module starts a Flask web application."""
+
 from flask import Flask
 
 app = Flask(__name__)
@@ -6,7 +8,7 @@ app = Flask(__name__)
 
 @app.route("/", strict_slashes=False)
 def hello_hbnb():
-    """jijfwekfjm;dfmvdv;dmerfjgmpd;vmpvl;sovekgporgmvvmpos"""
+    """Display 'Hello HBNB!' when accessing the root URL."""
     return "Hello HBNB!"
 
 
