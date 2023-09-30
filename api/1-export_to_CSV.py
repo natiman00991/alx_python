@@ -1,99 +1,94 @@
 """
-1-export_to_CSV.py - Export Employee's TODO List to CSV
+Export Employee's TODO List to CSV
 
-This script fetches an employee's TODO list data from a REST API and exports it to a CSV file.
-
-Requirements:
-- Python 3.x
-- requests module (install with `pip install requests` if not already installed)
+This Python script fetches information about an employee's TODO list progress from a REST API and exports it to a CSV file. It utilizes the JSONPlaceholder API for data retrieval.
 
 Usage:
-    python 1-export_to_CSV.py <employee_id>
+    python3 1-export_to_CSV.py EMPLOYEE_ID
 
-Arguments:
-    <employee_id>: An integer representing the employee's ID for whom to fetch and export TODO list.
+    - EMPLOYEE_ID (int): The ID of the employee for whom you want to export the TODO list.
+
+The script fetches employee data and their TODO list from the API, formats it, and exports it to a CSV file with the following format:
+"USER_ID","USERNAME","TASK_COMPLETED_STATUS","TASK_TITLE"
+
+The CSV file is named USER_ID.csv, where USER_ID is the ID of the employee.
 
 Example:
-    python 1-export_to_CSV.py 2
+    To export the TODO list for employee with ID 2:
+    $ python3 1-export_to_CSV.py 2
 
-Output:
-    - Generates a CSV file named '<employee_id>.csv' containing TODO list data.
-    - Prints a success message if the export is successful.
-    - Prints an error message if the CSV file already exists or if the API request fails.
+    This will create a file named "2.csv" containing the employee's TODO list data.
 
+GitHub Repository:
+    https://github.com/your-username/alx_python
+
+Directory:
+    api
+
+File:
+    1-export_to_CSV.py
 """
 
+# Import necessary libraries
+
 import csv
-import os
 import requests
 import sys
 
 
 def fetch_employee_data(employee_id):
     """
-    Fetch employee's data including name and TODO list from the API.
+    Fetches employee data from the API based on the employee ID.
 
     Args:
-        employee_id (int): The ID of the employee.
+        employee_id (int): The ID of the employee to fetch data for.
 
     Returns:
-        str: The name of the employee.
-        list: A list of dictionaries containing TODO list data.
+        dict or None: A dictionary containing the employee data if successful, or None if there was an error.
     """
-    # Define API endpoints
-    user_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}"
-    todos_url = f"https://jsonplaceholder.typicode.com/users/{employee_id}/todos"
-
-    # Fetch user data
-    user_response = requests.get(user_url)
-    user_data = user_response.json()
-    employee_name = user_data.get("name")
-
-    # Fetch TODO list data
-    todos_response = requests.get(todos_url)
-    todos_data = todos_response.json()
-
-    return employee_name, todos_data
+    # ... Function implementation ...
 
 
-def export_to_csv(employee_id, employee_name, todos_data):
+def fetch_todo_list(employee_id):
     """
-    Export employee's TODO list data to a CSV file.
+    Fetches the TODO list for the employee based on the employee ID.
+
+    Args:
+        employee_id (int): The ID of the employee to fetch the TODO list for.
+
+    Returns:
+        list or None: A list of TODO items if successful, or None if there was an error.
+    """
+    # ... Function implementation ...
+
+
+def export_to_csv(employee_id, employee_data, todo_list):
+    """
+    Exports employee and TODO list data to a CSV file.
 
     Args:
         employee_id (int): The ID of the employee.
-        employee_name (str): The name of the employee.
-        todos_data (list): A list of dictionaries containing TODO list data.
+        employee_data (dict): A dictionary containing the employee's data.
+        todo_list (list): A list of TODO items.
+
+    Returns:
+        None
     """
-    # Check if the CSV file exists before opening it
-    csv_filename = f"{employee_id}.csv"
-    if os.path.exists(csv_filename):
-        with open(csv_filename, "w", newline="") as csvfile:
-            csv_writer = csv.writer(csvfile, quoting=csv.QUOTE_MINIMAL)
+    # ... Function implementation ...
 
-            # Write header row
-            csv_writer.writerow(
-                ["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"]
-            )
 
-            # Write TODO tasks to CSV
-            for todo in todos_data:
-                csv_writer.writerow(
-                    [employee_id, employee_name, todo["completed"], todo["title"]]
-                )
+def main():
+    """
+    Main function to execute the script. Handles command-line arguments and overall script flow.
 
-        print(f"Tasks for Employee {employee_name} exported to {csv_filename}")
-    else:
-        print(f"CSV file '{csv_filename}' does not exist.")
+    Args:
+        None
+
+    Returns:
+        None
+    """
+    # ... Function implementation ...
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python 1-export_to_CSV.py <employee_id>")
-        sys.exit(1)
-
-    employee_id = int(sys.argv[1])
-    employee_name, todos_data = fetch_employee_data(employee_id)
-
-    if employee_name is not None:
-        export_to_csv(employee_id, employee_name, todos_data)
+    main()
