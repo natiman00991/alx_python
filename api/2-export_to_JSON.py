@@ -38,9 +38,9 @@ Usage:
 
 """
 
+import json
 import requests
 import sys
-import json
 
 
 def get_employee_todo_progress(employee_id):
